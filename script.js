@@ -3,21 +3,12 @@ window.onload = () => {
   let canvas = document.getElementById("canvas");
   let context = canvas.getContext("2d");
   let img = new Image();
-
-
-
-
   img.onload = function(){
     canvas.width = img.naturalWidth;
     canvas.height = img.naturalHeight;
     context.drawImage(img, 0, 0);
   }
-
   img.src = 'dwight.jpg';
-
-
-
-
   button.onclick = () => {
     let phrase = document.getElementById('phrase').value.trim();
     if(phrase === null || phrase === '') {
@@ -41,5 +32,4 @@ window.onload = () => {
     context.fillText(phrase, x, y);
     }
   }
-
 }
