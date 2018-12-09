@@ -2,44 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dwight - Everybody hurts generator</title>
+    <link rel="stylesheet" href="style.min.css">
+    <script src="script.js"></script>
   </head>
   <body>
-    <canvas id="myCanvas" width="694" height="390"></canvas>
-    <div id="wrap">
-      <input type="text" id="phrase">
-      <button id="button">
-        That's what she said
-      </button>
-    </div>
-    <script>
-    let button = document.getElementById('button');
-    let canvas = document.getElementById("myCanvas");
-    let context = canvas.getContext("2d");
-    let img = new Image();
-    img.src = "meme.jpg";
-    img.onload = function(){
-      context.drawImage(img, 0, 0);
-    }
-    button.onclick = () => {
-      let phrase = document.getElementById('phrase').value.trim();
-      if(phrase === null || phrase === '') {
-        return;
-      }
-      phrase = '(' + phrase + ' playing on car stereo)';
-      phrase = phrase.toUpperCase();
-      let canvas = document.getElementById("myCanvas");
-      let context = canvas.getContext("2d");
-      let img = new Image();
-      img.src = "meme.jpg";
-      img.onload = function(){
-       context.drawImage(img, 0, 0);
-       context.font = "20pt Calibri";
-       context.fillStyle = 'white';
-       context.textAlign="center";
-       context.fillText(phrase, 347, 350);
-      }
-    }
-    </script>
+    <main>
+      <canvas id="canvas" crossorigin="anonymous"></canvas>
+      <div id="wrap">
+        <input type="text" id="phrase" placeholder="Song by artist">
+        <button id="button">
+          That's what she said
+        </button>
+      </div>
+    </main>
   </body>
 </html>
